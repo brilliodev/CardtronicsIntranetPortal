@@ -1,0 +1,151 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.padding0{
+    padding: 0;
+}
+.padding-r0{
+    padding-right: 0;
+}
+header{
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px 3px #efefef;
+}
+.logo{
+    width: 80px;
+}
+.header-content{
+    padding: 0 30px;
+
+}
+.dashboard-wrapper{
+    background-color: #F0F3F5;
+    padding: 40px 20px 20px 20px;
+    height: calc(100vh - 60px);
+}
+.cards{
+    float: left;
+    width: 100%;
+    height: calc(100vh - 180px);
+    background-color: #ffffff;
+    box-shadow: 0 0 2px 3px #efefef;
+    overflow: hidden;
+}   
+.title{
+    padding: 0 30px 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.card-title{
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 400;
+}
+.network-header{
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
+.dashboard-icons{
+    width: 30px;
+}
+.card-content{
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
+.cards-right-big{
+    height: calc(60vh - 90px);
+}
+.cards-right-small{
+    height: calc(40vh - 110px);
+    margin-top: 20px;
+}
+.stats-label{
+    text-transform: uppercase;
+    font-size: 8px;
+    width: 100%;
+    margin-top: 6px;
+
+}
+.circle{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.circle-yellow{
+    background-color: #FFAF19;
+}
+.circle-green{
+    background-color: #00E0AC;
+}
+.circle-red{
+    background-color: #FF5C48;
+}
+.stats-value{
+    color: #009BFF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.revenue-textbox{
+    float:right;
+}
+.stats-wrapper {
+    float: left;
+    width: 100%;
+}
+.graph-wrapper{
+    float:left;
+    width: 100%;
+    height: 250px;
+}
+.margin-t20{
+    margin-top: 20px;
+}
+
+/*Somesh CSS*/
+.jumbotron{
+    float:left;
+    width:50%;
+}
+.RadProgressBar_Bootstrap.rpbHorizontal {
+    height: 0.42em !important;
+}
+
+.progressLayout {
+    padding: 0 10% 0 0 !important;
+}
+
+.rfdAspLabel {
+    font-size: 11px;
+    padding-right: 17%;
+}
+
+.rfdAspLabel.bold {
+    font-weight:bold;
+}
+
+
+
+element.style {
+    width: 75%;
+}
+
+
+.RadProgressBar_Bootstrap.rpbHorizontal .rpbStateSelected, .RadProgressBar_Bootstrap.rpbHorizontal .rpbStateSelected:hover, .RadProgressBar_Bootstrap.rpbHorizontal .rpbStateSelected:link, .RadProgressBar_Bootstrap.rpbHorizontal .rpbStateSelected:visited, .RadProgressBar_Bootstrap.rpbHorizontal .rpbChunk.rpbStateSelected {
+    border-color: #1f9dfd !important;
+}
+
+.RadProgressBar_Bootstrap .rpbStateSelected, .RadProgressBar_Bootstrap .rpbStateSelected:hover, .RadProgressBar_Bootstrap .rpbStateSelected:link, .RadProgressBar_Bootstrap .rpbStateSelected:visited {
+    background-color: #1f9dfd !important;
+    color: #fff;
+}
+
+/*End of Somesh CSS*/
