@@ -7,6 +7,22 @@ Partial Class _Default
 
     Sub Page_Load()
         Me.generateLineSeriesGraph()
+        Dim dataSource As List(Of [Object]) = New List(Of Object)()
+        dataSource.Add(New With {
+            Key .NotLive = 100,
+            Key .Live = 1000,
+            Key .Closed = 100,
+            Key .Item = "Client Networks"
+        })
+        dataSource.Add(New With {
+            Key .NotLive = 100,
+            Key .Live = 995,
+            Key .Closed = 25,
+            Key .Item = "ATM Networks"
+        })
+
+        BarChart.DataSource = dataSource
+        BarChart.DataBind()
 
     End Sub
 
