@@ -8,7 +8,7 @@
     <title>Cardtronics Dashboard</title>
     <meta charset="utf">
     <meta name="viewport" content="width=device-width,inititial-scale=1.0">
-    <script src="scripts.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -165,7 +165,6 @@
                                     <p class="stats-label">SEARCHES</p>
                                 </div>
                             </div>
-                           
                         </div>
                     </div>
                 </div>
@@ -173,7 +172,7 @@
                     <div class="cards cards-right-big">
                         <div class="card-content">
                             <div class="network-header">
-                                <img alt="network-icon" class="dashboard-icons" src="images/network.png">
+                                <img alt="network-icon" class="dashboard-icons" src="images/network.png"/>
                                 <p class="card-title">networks</p>
                             </div>
                             <div class="stats-wrapper">
@@ -194,74 +193,46 @@
                                 </div>
                             </div>
                             <div>
-                           <telerik:RadHtmlChart runat="server" ID="BarChart1" Transitions="true">
+                                <telerik:RadHtmlChart runat="server" ID="BarChart" Height="250" Width="400" Transitions="false" Skin="Silk">
                                     <PlotArea>
-                                        <Series>
-                                            <telerik:BarSeries Name="Not Live" Stacked="true">
-                                                <Appearance>
-                                                    <FillStyle BackgroundColor="#ffcc66" />
-                                                </Appearance>
-                                                <LabelsAppearance DataFormatString="{0}" Position="Center" />
-                                                <TooltipsAppearance BackgroundColor="White" DataFormatString="${0}" />
-                                                <SeriesItems>
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                    
-                                                </SeriesItems>
-                                            </telerik:BarSeries>
-                                            <telerik:BarSeries Name="Live" Stacked="true">
-                                                <Appearance>
-                                                    <FillStyle BackgroundColor="#66ff33" />
-                                                </Appearance>
-                                                <LabelsAppearance DataFormatString="${0}" Position="Center" />
-                                                <TooltipsAppearance BackgroundColor="White" DataFormatString="${0}" />
-                                                <SeriesItems>
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                  
-                                                </SeriesItems>
-                                            </telerik:BarSeries>
-                                            <telerik:BarSeries Name="Closed" Stacked="true">
-                                                <Appearance>
-                                                    <FillStyle BackgroundColor="#ff3300" />
-                                                </Appearance>
-                                                <LabelsAppearance DataFormatString="${0}" Position="Center" />
-                                                <TooltipsAppearance BackgroundColor="White" DataFormatString="${0}" />
-                                                <SeriesItems>
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                                                    <telerik:CategorySeriesItem Y="315000" />
-                    
-                                                </SeriesItems>
-                                            </telerik:BarSeries>
-                                        </Series>
-                                        <XAxis AxisCrossingValue="0" Color="White" MajorTickType="Outside" MinorTickType="Outside"
-                                            Reversed="false">
-                                            <Items>
-                                                <telerik:AxisItem LabelText="Client Networks" />
-                                                <telerik:AxisItem LabelText="ATM Networks" />
+            <Series>
+                <telerik:BarSeries DataFieldY="NotLive" Stacked="true">
+                    <LabelsAppearance DataFormatString="{0}" Position="Center"></LabelsAppearance>
+                    <Appearance>
+                        <FillStyle BackgroundColor="#ffcc66" />
+                    </Appearance>
+                    <TooltipsAppearance Visible="false"></TooltipsAppearance>
+                </telerik:BarSeries>
+                <telerik:BarSeries DataFieldY="Live">
+                    <LabelsAppearance DataFormatString="{0}" Position="Center"></LabelsAppearance>
+                    <Appearance>
+                        <FillStyle BackgroundColor="#66ff33" />
+                    </Appearance>
+                    <TooltipsAppearance Visible="false"></TooltipsAppearance>
+                </telerik:BarSeries>
+                <telerik:BarSeries DataFieldY="Closed">
+                    <LabelsAppearance DataFormatString="{0}" Position="Center"></LabelsAppearance>
+                    <Appearance>
+                        <FillStyle BackgroundColor="#ff3300" />
+                    </Appearance>
+                    <TooltipsAppearance Visible="false"></TooltipsAppearance>
+                </telerik:BarSeries>
+            </Series>
+            <XAxis Visible="false" Color="Black" DataLabelsField="Item">
                 
-                                            </Items>
-                                            <LabelsAppearance DataFormatString="" RotationAngle="0" />
-                                            <MajorGridLines Color="White" Width="0" />
-                                            <MinorGridLines Color="White" Width="0" />
-                                            <%--<TitleAppearance Position="Center" RotationAngle="0" Text="Years" />--%>
-                                        </XAxis>
-                                        <YAxis AxisCrossingValue="0" Color="White" MajorTickSize="1" MajorTickType="Outside"
-                                            MaxValue="1000000" MinorTickSize="1" MinorTickType="Outside" MinValue="0" Reversed="false"
-                                            Step="100000">
-                                            <LabelsAppearance DataFormatString="{0}" RotationAngle="0" />
-                                            <MajorGridLines Color="White" Width="1" />
-                                            <MinorGridLines Color="White" Width="1" />
-                                            <%--<TitleAppearance Position="Center" RotationAngle="0" Text="Sum" />--%>
-                                        </YAxis>
-                                    </PlotArea>
-                                   <%-- <ChartTitle Text="Current Status of Networks">
-                                    </ChartTitle>--%>
-                                    <Legend>
-                                        <Appearance Visible="false" Position="Top" />
-                                    </Legend>
+                <MajorGridLines Visible="false" Color="White" Width="0" />
+                <MinorGridLines Color="White" Width="1" />
+            </XAxis>
+            <YAxis Visible="false">
+                <PlotBands>
+                <telerik:PlotBand From="500" To="501" Color="Red" Alpha="0" />
+            </PlotBands>
+                <MajorGridLines Color="White" Width="1" />
+                <MinorGridLines Color="White" Width="1" />
+            </YAxis>
+        </PlotArea>
+        
                                 </telerik:RadHtmlChart>
-
                             </div>
                         </div>
                     </div>
