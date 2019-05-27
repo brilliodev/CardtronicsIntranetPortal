@@ -52,8 +52,10 @@ Partial Class _Default
         Return dt
     End Function
 
-    Private Sub generateLineSeriesGraph()
+    Protected Sub generateLineSeriesGraph()
 
+        DashboardRevenueChart.PlotArea.Series.Clear()
+        DashboardRevenueChart.PlotArea.XAxis.Items.Clear()
 
         Dim numSeries As Integer = GetData().Columns.Count - 2
         Dim currLineSeries As LineSeries = New LineSeries()

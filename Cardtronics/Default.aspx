@@ -61,16 +61,18 @@
                             <div class="col-md-4 col-lg-4">
                                 <telerik:RadTextBox RenderMode="Lightweight" disabled runat="server" ID="RadComboBox1" Width="280px" Text="Monthly Revenue"></telerik:RadTextBox>
                             </div>
-                            <div class="col-md-1 col-lg-1 revenue-textbox">
-                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton33" runat="server" OnClick="Generate_BarChart">
-                                <Icon PrimaryIconCssClass="rbCart"></Icon>
-                                 </telerik:RadButton>
-                             </div>
+                            
                              <div class="col-md-1 col-lg-1 revenue-textbox">
                                 <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server" OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbRSS"></Icon>
                             </telerik:RadButton>
                                 
+                            </div>
+
+                            <div class="col-md-1 col-lg-1 revenue-textbox">
+                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton33" runat="server" OnClick="generateLineSeriesGraph">
+                                <Icon PrimaryIconCssClass="rbCart"></Icon>
+                                 </telerik:RadButton>
                             </div>
                             </div>
                         </div>
@@ -80,68 +82,6 @@
                                  <telerik:RadHtmlChart runat="server" ID="DashboardRevenueChart" Width="100%" Height="250px" Transitions="true">
 
                                  </telerik:RadHtmlChart>
-                               <%--<telerik:RadHtmlChart runat="server" ID="LineChart" Width="100%" Height="250px" Transitions="true">
-                                
-                          <PlotArea>
-                             <Series>
-                                 <telerik:LineSeries  Name="" MissingValues="Interpolate">
-                                 <LineAppearance  LineStyle="Smooth" />
-                                   <Appearance>
-                                         <FillStyle BackgroundColor="LightBlue" />
-                                   </Appearance>
-                <LabelsAppearance DataFormatString="{0}" Position="Above" />
-                <MarkersAppearance MarkersType="Square" BackgroundColor="Blue" />
-                <SeriesItems>
-                    <telerik:CategorySeriesItem Y="115" />
-                    <telerik:CategorySeriesItem Y="230" />
-                    <telerik:CategorySeriesItem Y="100"/>
-                    <telerik:CategorySeriesItem Y="410" />
-                    <telerik:CategorySeriesItem Y="330" />
-                    <telerik:CategorySeriesItem Y="430" />
-                    <telerik:CategorySeriesItem Y="233" />
-                    <telerik:CategorySeriesItem Y="113" />
-                    <telerik:CategorySeriesItem Y="339" />
-                    <telerik:CategorySeriesItem Y="212" />
-                    <telerik:CategorySeriesItem Y="163" />
-                    <telerik:CategorySeriesItem Y="150" />
-                </SeriesItems>
-            </telerik:LineSeries>
-                                
-                             </Series>
-                                 <XAxis MajorTickType="Outside" MinorTickType="Outside">
-                                     <Items>
-                                        <telerik:AxisItem LabelText="JAN 19" />
-                                        <telerik:AxisItem LabelText="FEB 19" />
-                                        <telerik:AxisItem LabelText="MAR 19" />
-                                        <telerik:AxisItem LabelText="APR 19" />
-                                        <telerik:AxisItem LabelText="MAY 19" />
-                                        <telerik:AxisItem LabelText="JUN 19" />
-                                        <telerik:AxisItem LabelText="JUL 19" />
-                                        <telerik:AxisItem LabelText="AUG 19" />
-                                        <telerik:AxisItem LabelText="SEP 19" />
-                                        <telerik:AxisItem LabelText="OCT 19" />
-                                        <telerik:AxisItem LabelText="NOV 19" />
-                                        <telerik:AxisItem LabelText="DEC 19" />
-                                     </Items>
-                                     <MajorGridLines Color="#EFEFEF" Width="1" />
-                                     <MinorGridLines Color="#F7F7F7" Width="1" />
-                                    <TitleAppearance Position="Center" RotationAngle="0" Text="" />
-                                 </XAxis>
-                                 <YAxis MajorTickSize="1" MajorTickType="Outside" MaxValue="500" MinorTickSize="1"
-                                 MinorTickType="Outside" MinValue="0">
-                                    <LabelsAppearance DataFormatString="{0}" RotationAngle="0" />
-                                    <MajorGridLines Color="#EFEFEF" Width="1" />
-                                    <MinorGridLines Color="#F7F7F7" Width="1" />
-                                    <TitleAppearance Position="Center" RotationAngle="0" Text="" />
-                                 </YAxis>
-                         </PlotArea>
-                          <ChartTitle Text="">
-                          </ChartTitle>
-                          <Legend>
-                            <Appearance Position="Bottom" />
-                          </Legend>
-
-                        </telerik:RadHtmlChart>--%>
                                 </div>
                                   <div class="stats-wrapper margin-t20">
                                 <div class="col-md-3 col-lg-3">
