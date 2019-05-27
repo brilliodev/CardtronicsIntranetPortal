@@ -63,6 +63,11 @@ Partial Class _Default
         'LineChart.PlotArea.XAxis.DataLabelsField = "Weeks"
         'LineChart.PlotArea.Appearance.
         Dim chartSeries As New ChartSeries()
+        LineChart.PlotArea.YAxis.PlotBands.Add(New PlotBand(300,
+                                             301,
+                                             System.Drawing.Color.Blue,
+                                             0))
+
 
         LineChart.DataSource = GetData()
         LineChart.DataBind()

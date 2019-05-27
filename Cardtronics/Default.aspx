@@ -229,6 +229,9 @@
                 <MinorGridLines Color="White" Width="1" />
             </XAxis>
             <YAxis Visible="false">
+                <PlotBands>
+                <telerik:PlotBand From="500" To="501" Color="Red" Alpha="0" />
+            </PlotBands>
                 <MajorGridLines Color="White" Width="1" />
                 <MinorGridLines Color="White" Width="1" />
             </YAxis>
