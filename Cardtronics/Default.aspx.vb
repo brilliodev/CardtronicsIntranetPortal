@@ -7,6 +7,7 @@ Partial Class _Default
 
     Sub Page_Load()
         generateLineSeriesGraph()
+        generateDonutChart()
         Dim dataSource As List(Of [Object]) = New List(Of Object)()
         dataSource.Add(New With {
             Key .NotLive = 100,
@@ -102,6 +103,26 @@ Partial Class _Default
         Dim chartSeries As New ChartSeries()
         DashboardRevenueChart.DataSource = GetData()
         DashboardRevenueChart.DataBind()
+    End Sub
+
+    Function Generate_DonutChartData() As DataTable
+
+        Dim tbl As New DataTable()
+        tbl.Columns.Add(New DataColumn("clientCount"))
+        tbl.Columns.Add(New DataColumn("serviceType"))
+
+        tbl.Rows.Add(New Object() {450, "LS API"})
+        tbl.Rows.Add(New Object() {1011, "LS WEB"})
+        tbl.Rows.Add(New Object() {300, "DI API"})
+        tbl.Rows.Add(New Object() {350, "DI WEB"})
+        tbl.Rows.Add(New Object() {20, "OTHERS"})
+
+        Return tbl
+    End Function
+    Protected Sub generateDonutChart()
+        DonutChart1.DataSource = Generate_DonutChartData()
+        DonutChart1.DataBind()
+
     End Sub
 
 End Class

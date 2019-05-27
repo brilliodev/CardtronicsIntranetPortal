@@ -32,7 +32,7 @@ header{
     height: calc(100vh - 180px);
     background-color: #ffffff;
     box-shadow: 0 0 2px 3px #efefef;
-    overflow: hidden;
+    overflow-y: scroll;
 }   
 .title{
     padding: 0 30px 15px;
@@ -146,6 +146,12 @@ element.style {
 .RadProgressBar_Bootstrap .rpbStateSelected, .RadProgressBar_Bootstrap .rpbStateSelected:hover, .RadProgressBar_Bootstrap .rpbStateSelected:link, .RadProgressBar_Bootstrap .rpbStateSelected:visited {
     background-color: #1f9dfd !important;
     color: #fff;
+}
+
+.donutChart{
+    float: left;
+    clear: both;
+    width: 100%;
 }
 
 /*End of Somesh CSS*/

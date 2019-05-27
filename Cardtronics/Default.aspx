@@ -105,6 +105,28 @@
                                     <p class="stats-label">SEARCHES</p>
                                 </div>
                             </div>
+
+                            <!-- Donut Chart -->
+                            <div  class="donutChart">
+                             <telerik:RadHtmlChart runat="server" ID="DonutChart1" Width="520" Height="500" Transitions="true" Skin="Silk">
+                                    <ChartTitle Text="">
+                                        <Appearance Align="Center" Position="Top">
+                                        </Appearance>
+                                    </ChartTitle>
+                                    <Legend>
+                                        <Appearance Position="Right" Visible="true">
+                                        </Appearance>
+                                    </Legend>
+                                    <PlotArea>
+                                        <Series>
+                                            <telerik:DonutSeries StartAngle="90"  HoleSize="65" DataFieldY="clientCount" NameField="serviceType">
+                                                <LabelsAppearance Position="Center" DataFormatString="{0} " Visible="true"></LabelsAppearance>
+                                                <TooltipsAppearance Color="White" DataFormatString="{0}"></TooltipsAppearance>
+                                            </telerik:DonutSeries>
+                                        </Series>
+                                    </PlotArea>
+                                </telerik:RadHtmlChart>
+                                </div>
                         </div>
                     </div>
                 </div>
