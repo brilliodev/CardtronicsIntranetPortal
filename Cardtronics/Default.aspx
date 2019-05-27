@@ -27,7 +27,7 @@
             var masterTableView = null;
 
             initialize = function () {
-                grid = $find("<%= LineChart.ClientID %>");
+                grid = $find("<%= DashboardRevenueChart.ClientID %>");
             grid.repaint();
         };
 
@@ -62,12 +62,12 @@
                                 <telerik:RadTextBox RenderMode="Lightweight" disabled runat="server" ID="RadComboBox1" Width="280px" Text="Monthly Revenue"></telerik:RadTextBox>
                             </div>
                             <div class="col-md-1 col-lg-1 revenue-textbox">
-                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton33" runat="server">
+                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton33" runat="server" OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbCart"></Icon>
                                  </telerik:RadButton>
-                                </div>
+                             </div>
                              <div class="col-md-1 col-lg-1 revenue-textbox">
-                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server">
+                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server" OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbRSS"></Icon>
                             </telerik:RadButton>
                                 
@@ -77,7 +77,7 @@
 
                             <!-- Graph -->
                             <div class="graph-wrapper">
-                                 <telerik:RadHtmlChart runat="server" ID="LineChart" Width="100%" Height="250px" Transitions="true">
+                                 <telerik:RadHtmlChart runat="server" ID="DashboardRevenueChart" Width="100%" Height="250px" Transitions="true">
 
                                  </telerik:RadHtmlChart>
                                <%--<telerik:RadHtmlChart runat="server" ID="LineChart" Width="100%" Height="250px" Transitions="true">
@@ -165,91 +165,7 @@
                                     <p class="stats-label">SEARCHES</p>
                                 </div>
                             </div>
-                            <%-- Progress Bar --%>
-                            <div>
-                                <telerik:layoutrow  cssclass="jumbotron">
-                <columns>
-                    <telerik:layoutcolumn span="6" spanmd="12" spansm="12" hiddenxs="true" cssclass="jumbotron">
-                        <div class="row">
-                            <div class="cell">
-                                <span class="rfdasplabel">ls web</span>
-                                <span class="rfdasplabel bold">1011 clients / $ 190k</span>
-                                <span class="rfdasplabel">&#94; 05% mom</span>
-                            </div>                       
-                        </div>
-                        <telerik:radprogressbar rendermode="lightweight" runat="server"  id="radprogressbar2" bartype="value" showlabel="false" value="75" minvalue="0" maxvalue="100">
-                            <clientevents onload="tuningprogressbarload"
-                                onvaluechanged="tuningprogressbarvaluechanged"
-                                oncompleted="tuningprogressbarcompleted" />
-                            <animationsettings duration="0" />
-                        </telerik:radprogressbar>
-                    </telerik:layoutcolumn>
-
-                    <telerik:layoutcolumn span="6" spanmd="12" spansm="12" hiddenxs="true" cssclass="jumbotron">
-                        <div class="row">
-                            <div class="cell">
-                                <span class="rfdasplabel">di api</span>
-                                <span class="rfdasplabel bold">300 clients / $ 30k</span>
-                                <span class="rfdasplabel">&#94; 05% mom</span>
-                            </div>                       
-                        </div>
-                        <telerik:radprogressbar rendermode="lightweight" runat="server" id="radprogressbar3" bartype="value" value="45" minvalue="0" maxvalue="100" showlabel="false">
-                            <clientevents onload="tuningprogressbarload"
-                                onvaluechanged="tuningprogressbarvaluechanged"
-                                oncompleted="tuningprogressbarcompleted" />
-                            <animationsettings duration="0" />
-                        </telerik:radprogressbar>
-                    </telerik:layoutcolumn>
-                    <telerik:layoutcolumn span="6" spanmd="12" spansm="12" hiddenxs="true" cssclass="jumbotron">
-                        <div class="row">
-                            <div class="cell">
-                                <span class="rfdasplabel">ls api</span>
-                                <span class="rfdasplabel bold">450 clients / $ 70k</span>
-                                <span class="rfdasplabel">&#94; 05% mom</span>
-                            </div>                       
-                        </div>
-                        <telerik:radprogressbar rendermode="lightweight" runat="server"  id="radprogressbar1" bartype="value" value="50" minvalue="0" maxvalue="100" showlabel="false">
-                            <clientevents onload="tuningprogressbarload"
-                                onvaluechanged="tuningprogressbarvaluechanged"
-                                oncompleted="tuningprogressbarcompleted" />
-                            <animationsettings duration="0" />
-                        </telerik:radprogressbar>
-                    </telerik:layoutcolumn>
-
-                    <telerik:layoutcolumn span="6" spanmd="12" spansm="12" hiddenxs="true" cssclass="jumbotron">
-                         <div class="row">
-                            <div class="cell">
-                                <span class="rfdasplabel">others</span>
-                                <span class="rfdasplabel bold">20 clients / $ 10k</span>
-                                <span class="rfdasplabel">&#94; 05% mom</span>
-                            </div>
-                         </div>                        
-                        <telerik:radprogressbar rendermode="lightweight" runat="server" id="radprogressbar4" bartype="value" value="25" minvalue="0" maxvalue="100" showlabel="false">
-                            <clientevents onload="tuningprogressbarload"
-                                onvaluechanged="tuningprogressbarvaluechanged"
-                                oncompleted="tuningprogressbarcompleted" />
-                            <animationsettings duration="0" />
-                        </telerik:radprogressbar>
-                    </telerik:layoutcolumn>
-                    <telerik:layoutcolumn span="6" spanmd="12" spansm="12" hiddenxs="true" cssclass="jumbotron">
-                        <div class="row">
-                            <div class="cell">
-                                <span class="rfdasplabel">di web</span>
-                                <span class="rfdasplabel bold">350 clients / $ 20k</span>
-                                <span class="rfdasplabel">&#94; 05% mom</span>
-                            </div>                       
-                        </div>
-                        <telerik:radprogressbar rendermode="lightweight" runat="server" id="radprogressbar5" bartype="value" value="30" minvalue="0" maxvalue="100" showlabel="false">
-                            <clientevents onload="tuningprogressbarload"
-                                onvaluechanged="tuningprogressbarvaluechanged"
-                                oncompleted="tuningprogressbarcompleted" />
-                            <animationsettings duration="0" />
-                        </telerik:radprogressbar>
-                    </telerik:layoutcolumn>
-                </columns>
-            </telerik:layoutrow>
-
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

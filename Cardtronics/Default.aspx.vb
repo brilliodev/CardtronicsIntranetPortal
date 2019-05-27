@@ -6,7 +6,7 @@ Partial Class _Default
     Inherits System.Web.UI.Page
 
     Sub Page_Load()
-        Me.generateLineSeriesGraph()
+        generateLineSeriesGraph()
 
     End Sub
 
@@ -16,7 +16,7 @@ Partial Class _Default
 
         dt.Columns.Add("ID")
         dt.Columns.Add("Weeks")
-        dt.Columns.Add("a111")
+        dt.Columns.Add("data")
 
 
         dt.Rows.Add(1, "JAN'2019", 430)
@@ -31,6 +31,8 @@ Partial Class _Default
         dt.Rows.Add(10, "OCT'2019", 444)
         dt.Rows.Add(11, "NOV'2019", 111)
         dt.Rows.Add(12, "DEC'2019", 134)
+
+
         Return dt
     End Function
 
@@ -38,35 +40,47 @@ Partial Class _Default
 
 
         Dim numSeries As Integer = GetData().Columns.Count - 2
+        Dim currLineSeries As LineSeries = New LineSeries()
+
         For i = 0 To numSeries - 1
 
-            Dim currLineSeries As LineSeries = New LineSeries()
             currLineSeries.DataFieldY = GetData().Columns(2 + i).Caption
-            LineChart.PlotArea.Series.Add(currLineSeries)
-        Next
-        'LineChart.PlotArea.XAxis.DataLabelsField = "Weeks"
-        'LineChart.PlotArea.Appearance.
-        Dim chartSeries As New ChartSeries()
+            currLineSeries.LineAppearance.LineStyle = Telerik.Web.UI.HtmlChart.Enums.ExtendedLineStyle.Smooth
+            DashboardRevenueChart.PlotArea.Series.Add(currLineSeries)
 
-        LineChart.DataSource = GetData()
-        LineChart.DataBind()
+        Next
+
+        DashboardRevenueChart.PlotArea.XAxis.DataLabelsField = "Weeks"
+        'DashboardRevenueChart.PlotArea.Appearance.
+        Dim chartSeries As New ChartSeries()
+        DashboardRevenueChart.DataSource = GetData()
+        DashboardRevenueChart.DataBind()
+
     End Sub
 
+    Protected Sub Generate_BarChart()
+        DashboardRevenueChart.PlotArea.Series.Clear()
+        DashboardRevenueChart.PlotArea.XAxis.Items.Clear()
 
+        Dim numSeries As Integer = GetData().Columns.Count - 2
+        Dim ColumnSeries As ColumnSeries = New ColumnSeries()
+        For i = 0 To numSeries - 1
 
-    'Dim radChart As New RadChart()
-    'radChart.ChartTitle.TextBlock.Text = "My RadChart"
+            ColumnSeries.DataFieldY = GetData().Columns(2 + i).Caption
+            'currBarSeries.SeriesItems.
+            'currBarSeries.Appearance = Telerik.Web.UI.HtmlChart.Enums.ExtendedLineStyle.Smooth
 
-    'Dim chartSeries As New ChartSeries()
-    'chartSeries.Name = "Sales"
-    'chartSeries.Type = ChartSeriesType.Line
-    'chartSeries.AddItem(120, "Internet")
-    'chartSeries.AddItem(140, "Retail")
-    'chartSeries.AddItem(35, "Wholesale")
-    'Me.Page.Controls.Add(radChart)
+            DashboardRevenueChart.PlotArea.Series.Add(ColumnSeries)
 
+        Next
 
-    'End Sub
+        DashboardRevenueChart.PlotArea.XAxis.DataLabelsField = "Weeks"
+
+        Dim chartSeries As New ChartSeries()
+        DashboardRevenueChart.DataSource = GetData()
+        DashboardRevenueChart.DataBind()
+    End Sub
+
 End Class
 
 
