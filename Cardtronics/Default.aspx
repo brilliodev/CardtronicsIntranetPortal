@@ -14,12 +14,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+       
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true">
             <Scripts>
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
                 <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
             </Scripts>
+            
         </telerik:RadScriptManager>
         <script type="text/javascript">
             //Put your JavaScript code here.
@@ -35,7 +37,9 @@
 
 
         </script>
+       
         <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+            
         </telerik:RadAjaxManager>
 
 
@@ -59,18 +63,22 @@
                             <div  class="col-md-6 col-lg-6"></div>
                             <div  class="col-md-6 col-lg-6">
                             <div class="col-md-4 col-lg-4">
-                                <telerik:RadTextBox RenderMode="Lightweight" disabled runat="server" ID="RadComboBox1" Width="280px" Text="Monthly Revenue"></telerik:RadTextBox>
+                                <asp:Label Text="Monthly Revenue" runat="server"></asp:Label>
+                                
+                                <telerik:RadTextBox RenderMode="Lightweight" runat="server" ID="SetTargetMarkerTxtBox" Width="100px" Text=""></telerik:RadTextBox>
+                                <telerik:RadButton RenderMode="Lightweight" ID="SetTargetMarker" runat="server" OnClick="TargetMarkerChanged" Text="Set Target"></telerik:RadButton>
                             </div>
                             
                              <div class="col-md-1 col-lg-1 revenue-textbox">
                                 <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server" OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbRSS"></Icon>
                             </telerik:RadButton>
-                                
+                                 
                             </div>
 
                             <div class="col-md-1 col-lg-1 revenue-textbox">
                                 <telerik:RadButton RenderMode="Lightweight" ID="RadButton33" runat="server" OnClick="generateLineSeriesGraph">
+
                                 <Icon PrimaryIconCssClass="rbCart"></Icon>
                                  </telerik:RadButton>
                             </div>
@@ -186,9 +194,7 @@
                 <MinorGridLines Color="White" Width="1" />
             </XAxis>
             <YAxis Visible="false">
-                <PlotBands>
-                <telerik:PlotBand From="500" To="501" Color="Red" Alpha="0" />
-            </PlotBands>
+                
                 <MajorGridLines Color="White" Width="1" />
                 <MinorGridLines Color="White" Width="1" />
             </YAxis>
