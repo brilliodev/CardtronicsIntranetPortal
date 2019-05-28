@@ -8,6 +8,11 @@ Partial Class _Default
     Sub Page_Load()
         generateLineSeriesGraph()
         generateDonutChart()
+        GetNetworkStatusData()
+
+    End Sub
+
+    Function GetNetworkStatusData()
         Dim dataSource As List(Of [Object]) = New List(Of Object)()
         dataSource.Add(New With {
             Key .NotLive = 100,
@@ -24,8 +29,23 @@ Partial Class _Default
 
         BarChart.DataSource = dataSource
         BarChart.DataBind()
+    End Function
 
-    End Sub
+    Function TargetMarkerChanged()
+        Dim newTargetValue = SetTargetMarkerTxtBox.Text
+        If (IsNumeric(newTargetValue)) Then
+            DashboardRevenueChart.PlotArea.YAxis.PlotBands.Clear()
+
+            DashboardRevenueChart.PlotArea.YAxis.PlotBands.Add(New PlotBand(newTargetValue,
+                                             newTargetValue + 1,
+                                             System.Drawing.Color.Red,
+                                             0))
+
+
+        End If
+
+    End Function
+
 
     Function GetData() As DataTable
         ' Create new DataTable instance.
@@ -76,7 +96,7 @@ Partial Class _Default
         DashboardRevenueChart.DataBind()
         DashboardRevenueChart.PlotArea.YAxis.PlotBands.Add(New PlotBand(300,
                                              301,
-                                             System.Drawing.Color.Blue,
+                                             System.Drawing.Color.Red,
                                              0))
 
 
@@ -103,6 +123,10 @@ Partial Class _Default
         Dim chartSeries As New ChartSeries()
         DashboardRevenueChart.DataSource = GetData()
         DashboardRevenueChart.DataBind()
+        DashboardRevenueChart.PlotArea.YAxis.PlotBands.Add(New PlotBand(300,
+                                             301,
+                                             System.Drawing.Color.Red,
+                                             0))
     End Sub
 
     Function Generate_DonutChartData() As DataTable
