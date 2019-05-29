@@ -12,6 +12,7 @@ Partial Class _Default
         Dim AjaxManager As RadAjaxManager = RadAjaxManager.GetCurrent(Page)
         AjaxManager.AjaxSettings.AddAjaxSetting(RadButton37, DashboardRevenueChart)
         AjaxManager.AjaxSettings.AddAjaxSetting(RadButton33, DashboardRevenueChart)
+        AjaxManager.AjaxSettings.AddAjaxSetting(SetTargetMarker, DashboardRevenueChart)
     End Sub
 
     Function GetNetworkStatusData()
