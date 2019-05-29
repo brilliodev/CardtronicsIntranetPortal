@@ -90,6 +90,7 @@ Partial Class _Default
         Next
 
         DashboardRevenueChart.PlotArea.XAxis.DataLabelsField = "Weeks"
+
         'DashboardRevenueChart.PlotArea.Appearance.
         Dim chartSeries As New ChartSeries()
         DashboardRevenueChart.DataSource = GetData()
@@ -98,6 +99,12 @@ Partial Class _Default
                                              301,
                                              System.Drawing.Color.Red,
                                              0))
+        Dim thePlotBand As New PlotBand()
+        thePlotBand.From = 2
+        thePlotBand.To = 3
+        thePlotBand.Color = System.Drawing.ColorTranslator.FromHtml("#008de7")
+        thePlotBand.Alpha = 200
+        DashboardRevenueChart.PlotArea.XAxis.PlotBands.Add(thePlotBand)
 
 
     End Sub

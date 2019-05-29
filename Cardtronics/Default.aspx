@@ -68,7 +68,8 @@
                                 <telerik:RadTextBox RenderMode="Lightweight" runat="server" ID="SetTargetMarkerTxtBox" Width="100px" Text=""></telerik:RadTextBox>
                                 <telerik:RadButton RenderMode="Lightweight" ID="SetTargetMarker" runat="server" OnClick="TargetMarkerChanged" Text="Set Target"></telerik:RadButton>
                             </div>
-                            
+                                
+                
                              <div class="col-md-1 col-lg-1 revenue-textbox">
                                 <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server" OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbRSS"></Icon>
@@ -82,6 +83,7 @@
                                 <Icon PrimaryIconCssClass="rbCart"></Icon>
                                  </telerik:RadButton>
                             </div>
+
                             </div>
                         </div>
 
