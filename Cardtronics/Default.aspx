@@ -29,7 +29,7 @@
             var masterTableView = null;
 
             initialize = function () {
-                grid = $find("<%= DashboardRevenueChart.ClientID %>");
+                grid = $find("<%# DashboardRevenueChart.ClientID %>");
             grid.repaint();
         };
 
@@ -71,7 +71,7 @@
                                 
                 
                              <div class="col-md-1 col-lg-1 revenue-textbox">
-                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server" OnClick="Generate_BarChart">
+                                <telerik:RadButton RenderMode="Lightweight" ID="RadButton37" runat="server"  OnClick="Generate_BarChart">
                                 <Icon PrimaryIconCssClass="rbRSS"></Icon>
                             </telerik:RadButton>
                                  
